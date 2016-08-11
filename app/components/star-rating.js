@@ -28,8 +28,6 @@ export default Ember.Component.extend({
                 item: this.get('item'),
                 rating: newRating
             });
-
         }
     }
-
 });
