@@ -2,6 +2,13 @@ import Ember from 'ember';
 import Song from '../../../models/song';
 
 export default Ember.Route.extend({
+    model: function() {
+      return this.modelFor('bands.band');
+    },
+
+    resetController: function(controller) {
+      controller.set('songCreationStarted', false);
+    },
 
     actions: {
         createSong: function() {
