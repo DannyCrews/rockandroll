@@ -1,6 +1,7 @@
 import { test } from 'qunit';
 import moduleForAcceptance from 'rarwe/tests/helpers/module-for-acceptance';
 import Pretender from 'pretender';
+// import httpStubs from '../helpers/http-stubs';
 
 moduleForAcceptance('Acceptance | bands');
 
@@ -39,7 +40,7 @@ test('List bands', function(assert) {
       });
     });
 
-test('List bands', function(assert) {
+test('Create a new band', function(assert) {
   server = new Pretender(function() {
     this.get('/bands', function() {
      var response = {
