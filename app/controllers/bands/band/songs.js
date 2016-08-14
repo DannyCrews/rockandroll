@@ -38,17 +38,17 @@ export default Ember.Controller.extend({
     }),
 
   actions: {
-    enableSongCreation: function() {
+    enableSongCreation() {
       this.set('songCreationStarted', true);
     },
-    updateRating: function(song, rating) {
+    updateRating(song, rating) {
       if (song.get('rating') === rating) {
         rating = null;
       }
       song.set('rating', rating);
       return song.save();
     },
-    setSorting: function(option) {
+    setSorting(option) {
       this.set('sortBy', option);
     },
   }

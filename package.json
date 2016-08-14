@@ -41,6 +41,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
+    "ember-watson": "^0.8.2",
     "liquid-fire": "0.24.1",
     "loader.js": "^4.0.1"
   }
