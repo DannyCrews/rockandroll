@@ -27,15 +27,13 @@ export default Ember.Controller.extend({
         return song.get('title').toLowerCase().indexOf(searchTerm) !== -1;
     });
   }),
-  canCreateSong: Ember.computed('songCreationStarted',
-    'model.songs.length', function() {
-      return this.get('songCreationStarted') ||
-      this.get('model.songs.length');
-    }),
+  hasSongs: Ember.computed.bool('model.songs.length'),
+  canCreateSong: Ember.computed.or('songCreationStarted', 'hasSongs'),
   newSongPlaceholder: Ember.computed('model.name', function() {
     var bandName = this.get('model.name');
     return `New ${capitalize(bandName)} song`;
     }),
+  isAddButtonDisabled: Ember.computed.empty('title'),
 
   actions: {
     enableSongCreation() {
